@@ -68,6 +68,9 @@ img{
 	font-size: 11px;
 	margin-right: 3px;
 }
+
+
+
 .od, .oi{
 	width: 9%;
 }
@@ -78,4 +81,16 @@ textarea.form-control{
 
 .medida{
 	width: 12%;
+}
+
+label{
+	color: rgb(0,172,200);
+}
+
+.tec{
+	width: 20%;
+}
+
+.desc{
+	height: 30%;
 }

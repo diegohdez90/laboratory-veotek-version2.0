@@ -50,6 +50,9 @@ a .glyphicon-menu-left, a .glyphicon-menu-right{
 	color: rgb(0,172,200);
 }
 
+a .select{
+  color: rgb(253,130,4);
+}
 
 a.menu {
   color: rgb(0,172,200);

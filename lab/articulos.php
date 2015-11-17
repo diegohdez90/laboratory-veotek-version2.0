@@ -95,6 +95,14 @@ echo'
 				
 			</div>
 			<div class="col-md-2 menu">
+				<div class="row">
+					<ul>
+						<li>
+							<p class="text-center"><a href="seleccionar-pedido.php"><span class="glyphicon glyphicon-list-alt select" style="font-size:44px;"></span></a><br>
+	                        Modificar 	Pedidos</p>
+						</li>
+					</ul>
+				</div>
 				<ul>
 					<li>
 						<p class="text-center"><a href="index.php"><span class="glyphicon glyphicon-home" style="font-size:44px;"></span></a><br>

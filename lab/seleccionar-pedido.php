@@ -42,7 +42,8 @@ echo'
 
         <div class="row">
             <div class="col-md-8 busqueda">
-                <form action="pedidos-folio.php" method="post" enctype="multipart/form-data">
+                <h3>Busca tu pedido</h3>
+                <form action="modificar-folio.php" method="post" enctype="multipart/form-data">
                    <div class="form-group">
                 <?php
                     include('connection.php');
@@ -61,7 +62,7 @@ echo'
             </form>
 
 
-            <form action="pedidos-ref.php" method="post" enctype="multipart/form-data">
+            <form action="modificar-ref.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label><b>Referencia</b></label><br>
                     <input class="form-control" id="ref" name="ref" >
@@ -71,7 +72,7 @@ echo'
 
 
 
-            <form action="pedidos-tecnico.php" method="post" enctype="multipart/form-data">
+            <form action="modificar-tecnico.php" method="post" enctype="multipart/form-data">
                 <label><b>Tecnico<b></label><br>
                 <div class="form-group">
                 <?php

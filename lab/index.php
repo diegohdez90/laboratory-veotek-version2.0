@@ -79,6 +79,12 @@ echo '
 	                            </div>
 	                            <div class="item">
 	                                <div class="col-xs-4">
+	                                    <a href="seleccionar-pedido.php"><span class="glyphicon glyphicon-list-alt" style="font-size:88px;"></span></a>
+	                                    <div><p class="text-center">Ver pedidos</p></div>
+	                                </div>
+	                            </div>
+	                            <div class="item">
+	                                <div class="col-xs-4">
 	                                    <a href="articulos.php"><span class="glyphicon glyphicon-file" style="font-size:88px;"></span></a>
 										<div><p class="text-center">Articulos</p></div>
 	                                </div>

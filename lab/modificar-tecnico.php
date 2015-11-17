@@ -33,7 +33,7 @@
 								header('Location:session.php');
 							}
 
-echo'				
+echo'			
 			</div>
 		</div>';
 
@@ -42,127 +42,79 @@ echo'
 
 
 		<div class="row">
-			<div class="col-md-8 busqueda busqueda-folio">
+			<div class="col-md-8 busqueda busqueda-tecnica">
 				<img width="100%" align="center" src="../img/veotek-lab.png">
-				<?php
-					$folio = $_POST['folio'];
-					include('connection.php');
-			      	$queEmp = "SELECT * FROM pedido where folio='$folio'";
-			    	$resEmp = mysql_query($queEmp, $con) or die(mysql_error());
-			    	$totEmp = mysql_num_rows($resEmp);	
-				?>
-				<?php while ($rowEmp = mysql_fetch_assoc($resEmp)) {?>	
-				<table class="table">
-					<tr>
-						<th>Folio</th>
-						<th>Referencia</th>
-						<th>Fecha</th>
-						<th>Tecnico</th>
-					</tr>
-					<tr>
-						<td><?php echo $rowEmp['folio']; ?></td>
-						<td><?php echo $rowEmp['ref']; ?></td>
-						<td><?php echo $rowEmp['fecha']; ?></td>
-						<td><?php echo $rowEmp['tecnico']; ?></td>
-					</tr>
-				</table>
 
-				<table  class="table">
-			 		<tr>
-			 			<th></th>
-			 			<th>Esfera</th>
-			 			<th>Cilindro</th>
-			 			<th>Eje</th>
-			 			<th>Add</th>
-			 			<th>DNP</th>
-			 			<th>Altura</th>
-			 			<th>Prisma</th>
-			 			<th>Base Seg</th>
-			 		</tr>
-			 		<tr>
-			 			<td><b>OD</b></td>
-			 			<td><?php echo $rowEmp['ode1']; ?></td>
-			 			<td><?php echo $rowEmp['odc1']; ?></td>
-			 			<td><?php echo $rowEmp['odej1']; ?></td>
-			 			<td><?php echo $rowEmp['oda1']; ?></td>
-			 			<td><?php echo $rowEmp['odd1']; ?></td>
-			 			<td><?php echo $rowEmp['odal1']; ?></td>
-			 			<td><?php echo $rowEmp['odp1']; ?></td>
-			 			<td><?php echo $rowEmp['odb1']; ?></td>
-			 		</tr>
-			 		<tr>
-			 			<td><label><b>OI</b></label></td>
-			 			<td><?php echo $rowEmp['oie2']; ?></td>
-			 			<td><?php echo $rowEmp['oic2']; ?></td>
-			 			<td><?php echo $rowEmp['oiej2']; ?></td>
-			 			<td><?php echo $rowEmp['oia2']; ?></td>
-			 			<td><?php echo $rowEmp['oid2']; ?></td>
-			 			<td><?php echo $rowEmp['oial2']; ?></td>
-			 			<td><?php echo $rowEmp['oip2']; ?></td>
-			 			<td><?php echo $rowEmp['oib2']; ?></td>
-			 		</tr>
-				</table>
-
-				<table class="table">
-					<tr>
-						<th>
-							Descripci&oacute;n							
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<?php echo $rowEmp['descripcion']; ?><br>
-						</td>
-					</tr>
-				</table><br>
-
-
-
-				<table class="table">
-					<tr>
-						<th>
-							Armazones							
-						</th>
-						<th>
-							Micas						
-						</th>
-						<th>
-							Materiales							
-						</th>
-						<th>
-							Tratamiento							
-						</th>
-						<th>
-							Tipo						
-						</th>
-					</tr>
-					<tr>
-						<td>
-							<?php echo $rowEmp['armazon']; ?><br>
-						</td>
-						<td>
-							<?php echo $rowEmp['micas']; ?><br>
-						</td>
-						<td>
-							<?php echo $rowEmp['materiales']; ?><br>
-						</td>
-						<td>
-							<?php echo $rowEmp['tratamiento']; ?><br>
-						</td>
-						<td>
-							<?php echo $rowEmp['tipo']; ?><br>
-						</td>
-					</tr>
-				</table><br>
-
-
-				
-				<?php
-					}
-
-
-
-				?>		
+					<?php
+								$tecnico = $_POST['tecnico'];
+								include('connection.php');			
+					      		$queEmp = "SELECT * FROM pedido where tecnico='$tecnico' order by folio desc limit 30";
+					    		$resEmp = mysql_query($queEmp, $con) or die(mysql_error());
+					    		$totEmp = mysql_num_rows($resEmp);
+							?>
+							<h3>&Uacute;ltimos trabajos de <?php echo $tecnico; ?></h3>
+								<p><b>Tecnico: </b> <?php echo $tecnico ;?></p>
+						<div class="table-responsive">
+							<table class="table">
+					  			<tr>
+					    			<td>Folio</td>
+					    			<td>Referencia</td>
+					    			<td>Fecha</td>
+					    			<td>OJO</td>
+					    			<td>Esfera</td>
+					    			<td>Cilindro</td>
+					    			<td>Eje</td>
+					    			<td>Add</td>
+					    			<td>DNP</td>
+					    			<td>Altura</td>
+					    			<td>Prisma</td><td>Base seg</td>
+					    			<td>descripcion</td>
+					    			<td>status</td>
+					    			<td>Armazones</td>
+					    			<td>Micas</td>
+					    			<td>Materiales</td>
+					    			<td>Tratamiento</td>
+					    			<td>Tipo</td>
+					  			</tr>
+							<?php while ($rowEmp = mysql_fetch_assoc($resEmp)) {?>	
+								<tr>
+					    			<td rowspan="2"><?php echo $rowEmp['folio']; ?></td>
+					    			<td rowspan="2"><?php echo $rowEmp['ref']; ?></td>
+					    			<td rowspan="2"><?php echo $rowEmp['fecha']; ?></td>
+					    			<td><b>OD</b></td>
+					    			<td><input value="<?php echo $rowEmp['ode1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odc1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odej1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['oda1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odd1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odal1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odp1']; ?>"></td>
+					 				<td><input value="<?php echo $rowEmp['odb1']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['descripcion']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['status']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['armazon']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['micas']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['materiales']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['tratamiento']; ?>"></td>
+					    			<td rowspan="2"><input value="<?php echo $rowEmp['tipo']; ?>"></td>
+					  			</tr>
+					  			<tr>
+					    			<td><b>OI</b></td>
+					 				<td><?php echo $rowEmp['oie2']; ?></td>
+					 				<td><?php echo $rowEmp['oic2']; ?></td>
+					 				<td><?php echo $rowEmp['oiej2']; ?></td>
+					 				<td><?php echo $rowEmp['oia2']; ?></td>
+					 				<td><?php echo $rowEmp['oid2']; ?></td>
+					 				<td><?php echo $rowEmp['oial2']; ?></td>
+					 				<td><?php echo $rowEmp['oip2']; ?></td>
+					 				<td><?php echo $rowEmp['oib2']; ?></td>
+					  			</tr>
+							<?php
+					            }
+					        ?>
+					        </table>
+					    </div>
+							
 			</div>
 			<div class="col-md-4 menu">
 				<div class="row">

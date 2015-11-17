@@ -247,6 +247,10 @@ echo'
 					<div class="col-md-6">
 						<ul>
 							<li>
+								<p class="text-center"><a href="seleccionar-pedido.php"><span class="glyphicon glyphicon-list-alt select" style="font-size:44px;"></span></a><br>
+		                        Modificar Pedidos</p>
+							</li>
+							<li>
 								<p class="text-center small"><a href="busqueda.php"><span class="glyphicon glyphicon-search" style="font-size:44px;"></span></a><br>
 		                        Busqueda</p>
 							</li>

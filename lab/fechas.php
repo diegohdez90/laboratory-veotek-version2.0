@@ -329,6 +329,14 @@ echo'
 			</div>
 			<div class="col-md-4 menu">
 				<div class="row">
+					<ul>
+						<li>
+							<p class="text-center"><a href="seleccionar-pedido.php"><span class="glyphicon glyphicon-list-alt select" style="font-size:44px;"></span></a><br>
+	                        Modificar Pedidos</p>
+						</li>
+					</ul>
+				</div>
+				<div class="row">
 					<div class="col-md-6">
 						<ul>
 							<ul>
