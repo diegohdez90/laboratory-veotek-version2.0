@@ -61,3 +61,7 @@ a.menu {
 a:link, a:visited, a:hover, a:active span{
   color: rgb(0,172,200);
 }
+
+a.select:link, a.select:visited, a.select:hover, a.select:active span{
+  color: rgb(0,172,200);
+}
